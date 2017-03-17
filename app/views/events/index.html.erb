@@ -1,0 +1,18 @@
+<h3> Events </h3>
+
+<div class = "row" >
+
+  <% @events.each do |x| %>
+
+
+    <a href= "/event/<%= x.id %>" > <%= x.event_name %> </a> <br> 
+       <br>
+
+
+  <% end %>
+
+</div>
+<br>
+<br>
+<br>
+<%= link_to "Insert Event" , event_new_path %>

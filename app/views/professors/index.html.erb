@@ -1,0 +1,16 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<h1> Faculty Members </h1>
+
+  <% @professors.each do |x| %>
+      <a href="/professor/<%= x.id %>" > <%= x.name %></a> <br>
+    <%= x.position %> <br>
+    <br>
+    <br>
+    <br>
+    <% end %>
+
+    <%= link_to "Add professor" , professor_new_path %>
+    <%= link_to "Back" , officer_index_path %>
