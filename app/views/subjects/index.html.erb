@@ -1,0 +1,19 @@
+<table>
+<tr>
+  <th> Subject Code </th>
+  <th> Subject Title </th>
+</tr>
+<% @Subjects.each do |x| %>
+<table>
+
+  <tr>
+    <td><%= x.subject_code  %> </td>
+    <td><%= x.subject_title  %> </td>
+  </tr>
+</table>
+
+<% end %>
+
+</table>
+
+<%= link_to "Add Subject" , subject_new_path %>

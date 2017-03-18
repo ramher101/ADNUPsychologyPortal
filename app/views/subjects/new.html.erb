@@ -1,0 +1,21 @@
+<%= form_for (:subjects) do | f | %>
+<br>
+<%= f.label :Code %> <br>
+<%= f.text_field :subject_code %>
+<br>
+<%= f.label :title %><br>
+<%= f.text_field :subject_title %>
+<br>
+<%= f.label :units %><br>
+<%= f.text_field :units %>
+<br>
+<%= f.label :lec_units %><br>
+<%= f.text_field :lec_uni %>
+<br>
+<%= f.label :lab_units %><br>
+<%= f.text_field :lab_units %>
+<br>
+<br>
+<%= f.submit "Add" %>
+
+<% end %>

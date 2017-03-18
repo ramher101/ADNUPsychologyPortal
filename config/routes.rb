@@ -51,4 +51,11 @@ Rails.application.routes.draw do
   post 'event/:id/edit' => 'events#update'
   get 'event/destroy' => 'events#destroy'
   get 'event/:id/destroy' => 'events#destroy'
+
+
+    #routes for subjects
+    get    'subject/index' =>       'subjects#index'
+    get    'subject/new' =>         'subjects#new'
+    post   'subject/new' =>         'subjects#create'
+
 end
