@@ -14,6 +14,10 @@
 <%= f.label "Venue" %><br>
 <%= f.text_area :event_venue %><br>
 
+<%= f.label "Poster" %><br>
+<%= f.file_field :event_img %><br>
+
+
   <%= f.submit "Update Event" %><br>
   <%= link_to "Back", event_index_path %>
   <% end %>

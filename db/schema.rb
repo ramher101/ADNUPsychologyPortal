@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318030451) do
+ActiveRecord::Schema.define(version: 20170318122925) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "mission"
@@ -30,8 +30,13 @@ ActiveRecord::Schema.define(version: 20170318030451) do
     t.string   "event_description"
     t.date     "event_date"
     t.string   "event_venue"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "user_id"
+    t.string   "event_img_file_name"
+    t.string   "event_img_content_type"
+    t.integer  "event_img_file_size"
+    t.datetime "event_img_updated_at"
   end
 
   create_table "officers", force: :cascade do |t|
@@ -85,8 +90,9 @@ ActiveRecord::Schema.define(version: 20170318030451) do
     t.integer  "units"
     t.integer  "lec_units"
     t.integer  "lab_units"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.text     "course_description"
   end
 
   create_table "users", force: :cascade do |t|

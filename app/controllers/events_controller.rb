@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
     before_action :find_event, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def new
-    @events = Event.new
+    @events = current_user.events.build
   end
 
   def show
@@ -15,8 +14,7 @@ class EventsController < ApplicationController
   end
 
   def create
-
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
 
     if @event.save
       redirect_to event_index_path
@@ -43,7 +41,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:event_name, :event_description, :event_date, :event_venue)
+    params.require(:event).permit(:event_name, :event_description, :event_date, :event_venue, :event_img)
   end
 
   def find_event

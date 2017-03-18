@@ -3,15 +3,14 @@
 <div class = "row" >
 
   <% @researches.each do |x| %>
-
-    <div class = "col-md-3">
-      <a href="/research/<%= x.id%>" > <%= image_tag x.research_img.url(:research_index), class: "research" %>
-      </a> <br>
-    </div>
-
+      <div class = "col-md-3" >
+          <a href="/research/<%= x.id%>" > <%= image_tag x.research_img.url(:research_index), class: "research" %> </a> <br>
+      </div>
   <% end %>
 
 </div>
+
+
 <br>
 <br>
 <br>

@@ -3,7 +3,7 @@
 <%= form_for (:event) do |f| %>
 
   <%= f.label "Event Title" %> <br>
-  <%= f.text_area :event_name %><br>
+  <%= f.text_field :event_name %><br>
 
 
   <%= f.label "Description" %><br>
@@ -13,7 +13,11 @@
   <%= f.date_select :event_date %><br>
 
   <%= f.label "Venue" %><br>
-  <%= f.text_area :event_venue %><br>
+  <%= f.text_field :event_venue %><br><br>
+
+
+    <%= f.label "Poster" %><br>
+    <%= f.file_field :event_img %><br>
 
 
   <%= f.submit "Insert a Event" %><br><br>

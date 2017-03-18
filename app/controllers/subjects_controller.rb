@@ -1,4 +1,5 @@
 class SubjectsController < ApplicationController
+  before_action :find_subj, only: [:show, :destroy, :edit, :update]
 
   def index
     @Subjects = Subject.all
@@ -16,12 +17,19 @@ class SubjectsController < ApplicationController
     end
   end
 
+  def destroy
+
+    if @subject.destroy
+      redirect_to subject_index_path
+    end
+  end
+
 
 
   private
 
   def subj_params
-     params.require(:subjects).permit(:subject_code, :subject_title, :units, :lec_units, :lec_labs)
+     params.require(:subjects).permit(:subject_code, :subject_title, :units, :lec_units, :lec_labs, :course_description)
   end
 
   def find_subj

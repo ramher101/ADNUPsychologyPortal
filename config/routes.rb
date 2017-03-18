@@ -56,8 +56,15 @@ Rails.application.routes.draw do
 
 
     #routes for subjects
-    get    'subject/index' =>       'subjects#index'
-    get    'subject/new' =>         'subjects#new'
-    post   'subject/new' =>         'subjects#create'
+    get 'subject/index' => 'subjects#index'
+    get 'subject/new' => 'subjects#new'
+    post 'subject/new' => 'subjects#create'
+    get 'subject/edit' => 'subjects#edit'
+    get 'subject/:id' => 'subjects#show'
+    get 'subject/:id/edit' => 'subjects#edit'
+    post 'subject/:id/edit' => 'subjects#update'
+    get 'subject/destroy' => 'subjects#destroy'
+    get 'subject/:id/destroy' => 'subjects#destroy'
+
 
 end

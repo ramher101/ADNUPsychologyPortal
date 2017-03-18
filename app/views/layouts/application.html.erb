@@ -8,11 +8,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div class = "header" >
-
-     DEPARTMENT OF PSYCHOLOGY
+    <div class = "banner">
+      Ateneo de Naga University
     </div>
 
+    <div class = "header" >
+     DEPARTMENT OF PSYCHOLOGY
+    </div>
 
     <nav class = "navbar navbar-default">
       <div class = "container" >
@@ -26,13 +28,14 @@
         </div>
 
         <ul class = "nav navbar-nav navbar-right">
-          <li> <%= link_to "Sign Up", new_user_registration_path %></li>
+          <li> <%= link_to "Sign Up", new_user_registration_path%> </li>
             <% if user_signed_in? %>
               <li>  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
               <% else %>
-                <li> <%= link_to "Log in" , new_user_session_path %></li>
+              <li> <%= link_to "Log in" , new_user_session_path %> </li>
             <% end %>
         </ul>
+
       </div>
 
     </nav>
@@ -40,9 +43,13 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <div class = "container">
+
+    <div class = "container1">
       <%= yield %>
     </div>
 
   </body>
+
+  <div class = "footer">
+  </div>
 </html>
