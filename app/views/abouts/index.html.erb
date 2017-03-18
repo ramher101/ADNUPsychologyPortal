@@ -1,18 +1,8 @@
-<h1> Index </h1>
-
 
 
 <% @abouts.each do |x| %>
-<%= image_tag x.about_img.url(:about_index), class: "about" %>
+<a href = "/about/1" />
+<h2> Mission and Vision </h2>
 
-<h2> Mission </h2>
-<%= x.mission %>
 
-<h2> Vision </h2>
-<%= x.vision %>
-
-<h2> History </h2>
-<%= x.his %> <br>
 <% end %>
-
-<%= link_to "Update Section" , "/about/1/edit" %>

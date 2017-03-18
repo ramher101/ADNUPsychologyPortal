@@ -16,9 +16,14 @@
     <%= @research.callNo %> <br>
     <h4> Year Published </h4>
     <%= @research.year %> <br>
+    <h5> Posted by </h5>
+    <%= @research.user.email %>
 
   </div>
 </div>
 <%= link_to "Back", research_index_path %>
-<%= link_to "Edit", "/research/#{@research.id}/edit" %>
-<%= link_to "Delete" , "/research/#{@research.id}/destroy" %>
+
+<% if @research.user == current_user%>
+  <%= link_to "Edit", "/research/#{@research.id}/edit" %>
+  <%= link_to "Delete" , "/research/#{@research.id}/destroy" %>
+<% end %>

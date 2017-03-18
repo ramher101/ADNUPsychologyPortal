@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'research#index'
+  root 'researches#index'
   devise_for :users
+
   #routes for research
   get '/research/index' => 'researches#index'
   get '/research/new' => 'researches#new'
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
   get 'about/new' => 'abouts#new'
   post 'about/new' => 'abouts#create'
   get 'about/edit' => 'abouts#edit'
+  get 'about/:id' => 'abouts#show'
   get 'about/:id/edit' => 'abouts#edit'
   post 'about/:id/edit' => 'abouts#update'
 

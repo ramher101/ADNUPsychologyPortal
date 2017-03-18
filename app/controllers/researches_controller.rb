@@ -1,5 +1,6 @@
 class ResearchesController < ApplicationController
   before_action :find_research, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index , :show]
 
 
   def index
@@ -7,7 +8,7 @@ class ResearchesController < ApplicationController
   end
 
   def new
-    @research = Research.new
+    @research = current_user.researches.build
   end
 
   def show
@@ -15,7 +16,7 @@ class ResearchesController < ApplicationController
 
   def create
 
-      @research = Research.new(research_params)
+      @research = current_user.researches.build(research_params)
 
       if @research.save
         redirect_to research_index_path

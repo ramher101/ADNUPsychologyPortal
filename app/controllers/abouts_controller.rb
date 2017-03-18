@@ -1,27 +1,32 @@
 class AboutsController < ApplicationController
   before_action :find_about, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!, except: [:index , :show]
+
 
   def index
     @abouts = About.all
   end
 
-  def show
-
+  def new
+    @about = current_user.abouts.build
   end
 
-  def new
-    @about = About.new
+  def show
   end
 
   def create
-    @about = About.new(about_params)
 
-    if @about.save
-      redirect_to root_path
-    end
+      @about = current_user.abouts.build(about_params)
+
+        if @about.save
+          redirect_to root_path
+        end
   end
 
+  def edit
 
+  end
+  
   def update
     if @about.update(about_params)
       redirect_to about_index_path
@@ -29,9 +34,7 @@ class AboutsController < ApplicationController
 
   end
 
-  def edit
 
-  end
 
   def destroy
     if @about.destroy

@@ -1,0 +1,16 @@
+
+<h2> About </h2>
+<%= image_tag @about.about_img.url(:about_index), class: "about_index" %>
+
+<h2> Mission </h2>
+<%= @about.mission %>
+
+<h2> Vision </h2>
+<%= @about.vision %>
+
+<h2> History </h2>
+<%= @about.his %> <br>
+
+<% if @about.user == current_user %>
+  <%= link_to "Update" , "/about/1/edit" %>
+<% end %>
