@@ -2,7 +2,7 @@ class SubjectsController < ApplicationController
   before_action :find_subj, only: [:show, :destroy, :edit, :update]
 
   def index
-    @Subjects = Subject.all
+    @subjects = Subject.all
   end
 
   def new

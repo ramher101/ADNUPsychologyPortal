@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'researches#index'
   devise_for :users
 
+
   #routes for research
   get '/research/index' => 'researches#index'
   get '/research/new' => 'researches#new'

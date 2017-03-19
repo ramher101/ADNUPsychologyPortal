@@ -3,7 +3,7 @@
   <th> Subject Code </th>
   <th> Subject Title </th>
 </tr>
-<% @Subjects.each do |x| %>
+<% @subjects.each do |x| %>
 <table>
 
   <tr>
@@ -20,4 +20,6 @@
 
 </table>
 
-<%= link_to "Add Subject" , subject_new_path %>
+<% if @user_id != 1  && current_user.presence %>
+  <%= link_to "Add Subject" , subject_new_path %>
+<% end %>

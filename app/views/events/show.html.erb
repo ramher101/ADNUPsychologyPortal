@@ -13,9 +13,13 @@
     <%= @event.event_date %> <br>
     <h3> Venue </h3>
     <%= @event.event_venue %> <br>
-    <%= link_to "Back", event_index_path %>
-    <%= link_to "Edit", "/event/#{@event.id}/edit" %>
-    <%= link_to "Delete" , "/event/#{@event.id}/destroy" %>
+
+<%= link_to "Back", event_index_path %>
+
+    <% if @event.user == current_user %>
+      <%= link_to "Edit", "/event/#{@event.id}/edit" %>
+      <%= link_to "Delete" , "/event/#{@event.id}/destroy" %>
+    <% end %>
 
   </div>
 

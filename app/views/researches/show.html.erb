@@ -21,9 +21,10 @@
 
   </div>
 </div>
-<%= link_to "Back", research_index_path %>
+<a class="btn btn-default" href = "/research/index" role = "button" > Back  </a>
 
 <% if @research.user == current_user%>
-  <%= link_to "Edit", "/research/#{@research.id}/edit" %>
-  <%= link_to "Delete" , "/research/#{@research.id}/destroy" %>
+
+  <a class="btn btn-default" href = "/research/<%= @research.id %>/edit" role = "button" > Edit  </a>
+  <a class="btn btn-default" href = "/research/<%= @research.id %>/destroy" role = "button" > Delete  </a>
 <% end %>

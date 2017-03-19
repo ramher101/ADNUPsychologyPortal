@@ -1,15 +1,35 @@
 
-<h2> About </h2>
-<%= image_tag @about.about_img.url(:about_index), class: "about_index" %>
+  <div class = "about-container">
+    <h2> About </h2>
+    <%= image_tag @about.about_img.url(:about_index), class: "about_index" %>
+  </div>
 
-<h2> Mission </h2>
-<%= @about.mission %>
 
-<h2> Vision </h2>
-<%= @about.vision %>
+<div class = "col">
+  <div class = "col-xs-6">
+    <div class = "mission-container">
+      <h2> Mission </h2>
+      <%= @about.mission %>
+    </div>
+  </div>
 
-<h2> History </h2>
-<%= @about.his %> <br>
+  <div class = "col-xs-6">
+    <div class = "vision-container">
+      <h2> Vision </h2>
+      <%= @about.vision %>
+    </div>
+  </div>
+
+  <div class = "history-head">
+    <h2> History </h2>
+  </div>
+
+  <div class = "history-text">
+    <%= @about.his %> <br>
+  </div>
+
+
+</div>
 
 <% if @about.user == current_user %>
   <%= link_to "Update" , "/about/1/edit" %>

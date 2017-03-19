@@ -10,8 +10,6 @@
 
 </div>
 
-
-<br>
-<br>
-<br>
-<%= link_to "Insert Research" , research_new_path %>
+<% if current_user.presence %>
+  <a class="btn btn-default" href = "/research/new" role = "button"> Insert Research </a>
+<% end %>
