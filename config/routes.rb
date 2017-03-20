@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   devise_for :users
 
 
+  get '/home/index' => 'homes#index'
+
+
   #routes for research
   get '/research/index' => 'researches#index'
+  
   get '/research/new' => 'researches#new'
   post '/research/new' => 'researches#create'
   get '/research/edit' => 'research#edit'
@@ -45,6 +49,7 @@ Rails.application.routes.draw do
   post 'about/:id/edit' => 'abouts#update'
 
   #routes for event
+  get 'event/eventlist' => 'events#eventlist'
   get 'event/index' => 'events#index'
   get 'event/new' => 'events#new'
   post 'event/new' => 'events#create'

@@ -1,9 +1,14 @@
 
+
 <% @officers.each do |x| %>
-  <a href="/officer/<%= x.id %>" > APSA Officers </a> <br>
-  <a href="/professor/index" > Faculty Members </a> <br>
+	<div>
+		<div><a href="/officer/<%= x.id %>" > APSA Officers </a> <br>
+		</div>
+
+		<div ><a href="/professor/index" > Faculty Members </a> <br>
+		</div>
+	</div>
+
+  
 <% end %>
 
-
-  <br>
-  <br>

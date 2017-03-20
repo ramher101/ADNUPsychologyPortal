@@ -42,7 +42,7 @@ class ResearchesController < ApplicationController
   private
 
   def research_params
-    params.require(:research).permit(:title, :author, :description, :callNo, :year, :research_img)
+    params.require(:research).permit(:title, :author, :contributor, :description, :callNo, :year, :research_img)
   end
 
   def find_research

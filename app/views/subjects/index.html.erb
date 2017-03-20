@@ -1,25 +1,28 @@
-<table>
-<tr>
-  <th> Subject Code </th>
-  <th> Subject Title </th>
-</tr>
+<table class = "table table-striped">
+ 
+ <thead>
+	<tr>
+  		<th> Subject Code </th>
+  		<th> Subject Title </th>
+	</tr>
+</thead>
+
+<tbody>
 <% @subjects.each do |x| %>
-<table>
 
   <tr>
     <td> <a href = "/subject/<%= x.id %>" /> <%= x.subject_code %></a> </td>
     <td><%= x.subject_title  %> </td>
   </tr>
 
-  <tr>
-
-  </tr>
-</table>
 
 <% end %>
 
+</tbody>
+
 </table>
 
+
 <% if @user_id != 1  && current_user.presence %>
-  <%= link_to "Add Subject" , subject_new_path %>
+<a href ="new" class="btn btn-primary btn-lg" role="button" > Add Subject </a>
 <% end %>

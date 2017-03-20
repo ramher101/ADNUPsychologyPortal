@@ -5,6 +5,10 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def eventlist
+    @events = Event.all
+  end
+
   def new
     @events = current_user.events.build
   end
@@ -12,6 +16,7 @@ class EventsController < ApplicationController
   def show
 
   end
+
 
   def create
     @event = current_user.events.build(event_params)

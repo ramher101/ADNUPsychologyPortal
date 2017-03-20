@@ -6,15 +6,19 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    @subject = Subject.new
+    @subject = current_user.subjects.build
   end
 
   def create
-    @subject = Subject.new(subj_params)
+    @subject = current_user.subjects.build(subj_params)
 
     if @subject.save
       redirect_to subject_index_path
     end
+  end
+
+  def edit
+    
   end
 
   def destroy
@@ -23,6 +27,16 @@ class SubjectsController < ApplicationController
       redirect_to subject_index_path
     end
   end
+
+  def update
+
+    if @subject.update(subj_params)
+      redirect_to subject_index_path
+    end
+    
+  end
+
+  
 
 
 
