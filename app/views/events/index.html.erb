@@ -24,6 +24,6 @@
 <br>
 <br>
 <br>
-<% if current_user.presence %>
+<% if current_user == 1 %>
   <%= link_to "Insert Event" , event_new_path %>
 <% end %>

@@ -2,15 +2,21 @@
 <div class ="wrap">
 
 
-
 	<% @officers.each do |x| %>
 		
 			<div class="officer-left">
-				<a class = "text-people" href="/officer/<%= x.id %>" > APSA Officers </a> <br>
+				<div class = "text-people">
+				<a href="/officer/<%= x.id %>" class="btn btn-default btn-lg btn-block"><span style = "font-size: 50px ; color: #4fabc9;" class="glyphicon glyphicon-chevron-right"></span> Officers </a>
+				</div>
+
 			</div>
 
 			<div class="professor-right">
-				<a class = "text-people" href="/professor/index" > Faculty Members </a> <br>
+
+				<div class = "text-people">
+				<a href="/professor/index" class="btn btn-default btn-lg btn-block"><span style = "font-size: 50px; color: #22dd22;" class="glyphicon glyphicon-chevron-right"></span> Professors </a>
+				</div>
+
 			</div>
 		
 	<% end %>

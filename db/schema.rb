@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321031147) do
+ActiveRecord::Schema.define(version: 20170322151947) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "mission"
@@ -40,8 +40,12 @@ ActiveRecord::Schema.define(version: 20170321031147) do
   end
 
   create_table "homes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "adnu_img_file_name"
+    t.string   "adnu_img_content_type"
+    t.integer  "adnu_img_file_size"
+    t.datetime "adnu_img_updated_at"
   end
 
   create_table "officers", force: :cascade do |t|

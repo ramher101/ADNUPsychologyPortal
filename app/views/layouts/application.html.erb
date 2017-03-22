@@ -8,14 +8,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 
-
   </head>
 
 
   <body>
     <div class = "banner">
-      <img src ="#" class="img-thumbnail" width="40" height="40">
-      Ateneo de Naga University
+     <%= image_tag("adnu_logo.png", size: "30x30", alt: "adnu logo") %>
+     Ateneo De Naga University
       <div class = "toright">
             
             <% if !user_signed_in? %>
@@ -31,14 +30,18 @@
     </div>
 
     <div class = "header" >
-     <img src ="#" class="img-rounded" width="100" height="100">
+     <%= image_tag("psych_logo", size: "100x100", alt: "adnu logo") %>
         DEPARTMENT OF PSYCHOLOGY 
+
           <div class = "search-field" >
             <%= form_tag "/search_items/" do %>
-              <%= text_field_tag (:search_string) %>   
-              <%= submit_tag :search%>
+              <input type="search_string" class="form-control" placeholder="Search for..." >
             <% end %>
+
+                
           </div>
+
+      
     </div>
 
     <nav class = "navbar navbar-default">
@@ -64,8 +67,9 @@
 
 
 
-
+ <div class = "container" >
  <%= yield %>
+ </div>
 
  <div class = "footer" >
           Footer
