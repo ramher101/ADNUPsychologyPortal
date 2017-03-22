@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :researches
   has_many :abouts
   has_many :events
+  has_many :subjects
+  has_one :officer
+  has_many :professors
 end

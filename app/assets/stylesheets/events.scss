@@ -1,12 +1,7 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.event-head
-{
-  text-align: center;
-  font-size: 40px;
-  letter-spacing: 2px;
-}
+
 
 
 .event-title-header
@@ -22,4 +17,32 @@
   width: 250px;
   height: 300px;
   border: 3px;
+}
+
+.see-event
+{
+  text-align: right;
+  padding: 15px;
+  marign-right: 10px;
+}
+
+
+.event-instance
+{
+  background-color: lightblue;
+  width: 300px;
+  padding: 10px;
+}
+
+.event-name
+{
+  color: #ff12bb;
+  font-size: 40px;
+  font-family: helvetica;
+}
+
+.event-date
+{
+  font-size: 30px;
+  color:#9966ff;
 }

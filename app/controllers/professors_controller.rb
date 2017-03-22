@@ -10,16 +10,16 @@ class ProfessorsController < ApplicationController
   end
 
   def new
-    @professor = Professor.new
-  end
+    @professor = current_user.professors.build
 
 
   def create
-    @professor = Professor.new(professor_params)
+    @professor = current_user.professors.build(professor_params)
       if @professor.save
           flash[:notice] = "Successfuly Added"
           redirect_to professor_index_path
       end
+  end
 
   end
 
@@ -44,7 +44,7 @@ class ProfessorsController < ApplicationController
   private
 
   def professor_params
-    params.require(:professor).permit( :name, :position, :educ_attainment)
+    params.require(:professor).permit( :name, :position, :educ_attainment, :user_id)
   end
 
   def find_professor
@@ -52,3 +52,4 @@ class ProfessorsController < ApplicationController
   end
 
 end
+

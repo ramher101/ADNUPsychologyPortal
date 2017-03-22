@@ -4,4 +4,5 @@ class Event < ApplicationRecord
     validates_attachment_content_type :event_img, content_type: /\Aimage\/.*\z/
 
     belongs_to :user
+
 end

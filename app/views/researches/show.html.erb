@@ -10,6 +10,8 @@
     <%= @research.title %> <br>
     <h3> Author </h3>
     <%= @research.author %> <br>
+    <h3> Contributor/s </h3>
+    <%= @research.contributor %> <br>
     <h3> Description </h3>
     <%= @research.description %> <br>
     <h3> Call Number </h3>
@@ -23,8 +25,9 @@
 </div>
 <a class="btn btn-default" href = "/research/index" role = "button" > Back  </a>
 
-<% if @research.user == current_user%>
+<% if @research.user == current_user %>
 
   <a class="btn btn-default" href = "/research/<%= @research.id %>/edit" role = "button" > Edit  </a>
-  <a class="btn btn-default" href = "/research/<%= @research.id %>/destroy" role = "button" > Delete  </a>
+  <a class="btn btn-default" href = "/research/<%= @research.id %>/destroy" role = "button" > Delete 
+  </a>
 <% end %>
