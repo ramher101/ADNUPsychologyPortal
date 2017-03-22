@@ -1,5 +1,8 @@
 
-<p class = "event-head"> Events </p>
+
+<div class = "see-event"> 
+<a href="/event/eventlist" class = "btn btn-primary btn-lg" role = "button"> See more Events . . </a>
+</div>  
 
 
 <div class = "row" >
@@ -21,6 +24,6 @@
 <br>
 <br>
 <br>
-<% if current_user.presence %>
+<% if current_user == 1 %>
   <%= link_to "Insert Event" , event_new_path %>
 <% end %>
