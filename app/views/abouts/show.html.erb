@@ -6,31 +6,31 @@
 
 
 <div class = "col">
-  <div class = "col-xs-6">
+<div class = "col-xs-6">
     <div class = "mission-container">
       <h2> Mission </h2>
       <%= @about.mission %>
     </div>
   </div>
 
+
   <div class = "col-xs-6">
     <div class = "vision-container">
       <h2> Vision </h2>
       <%= @about.vision %>
     </div>
-  </div>
+    </div>
 
-  <div class = "history-head">
-    <h2> History </h2>
-  </div>
 
-  <div class = "history-text">
+
+<div class = "row-xs-6">
+<div class = "history-container">
+   <h2> History </h2>
     <%= @about.his %> <br>
-  </div>
-
-
+</div>
 </div>
 
+</div>
 <% if @about.user == current_user %>
   <%= link_to "Update" , "/about/1/edit" %>
 <% end %>

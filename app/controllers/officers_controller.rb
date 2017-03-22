@@ -8,7 +8,7 @@ class OfficersController < ApplicationController
   end
 
   def new
-    @officer = Officer.new
+    @officer = current_user.officers.build
   end
 
   def show
@@ -16,7 +16,7 @@ class OfficersController < ApplicationController
 
   def create
 
-      @officer = Officer.new(officer_params)
+      @officer = current_user.officers.build(officer_params)
 
       if @officer.save
         redirect_to officer_index_path
@@ -40,7 +40,7 @@ class OfficersController < ApplicationController
   private
 
   def officer_params
-    params.require(:officer).permit(:president, :internalvp, :externalvp, :secretary, :treasurer, :auditor, :pio, :fourthrep, :thirdrep, :secondrep, :vpgroup, :undersec, :coh, :undersec2, :fgh, :undersec3, :moderator)
+    params.require(:officer).permit( :user_id, :president, :internalvp, :externalvp, :secretary, :treasurer, :auditor, :pio, :fourthrep, :thirdrep, :secondrep, :vpgroup, :undersec, :coh, :undersec2, :fgh, :undersec3, :moderator)
   end
 
   def find_officer

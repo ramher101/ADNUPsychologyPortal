@@ -1,8 +1,18 @@
-<% @events.each do |event| %>
- 	<a href="/event/<%= event.id%>"><%= event.event_name %> </a><br>
-    <%= event.event_description %><br>
-    <%= event.event_date %><br>
-    <%= event.event_venue %>
-    <br>
-    <br>
-<% end %> 
+<div class = "row">
+	<% @events.each do |event| %>
+	  <div class = "col-md-4">
+ 	 	<div class = "event-instance">
+		 	<a class = "event-name" href="/event/<%= event.id%>"><%= event.event_name %> </a><br>
+		    <span class = "event-date"> <%= event.event_date.strftime("%B %d, %Y") %> </span> <br>
+		    <%= event.event_description %><br>
+		    <%= event.event_venue %>
+	 	</div>
+	   </div>
+	
+
+	<% end %> 
+
+</div>
+	
+	
+	

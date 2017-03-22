@@ -1,3 +1,49 @@
 // Place all the styles related to the abouts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about_index
+{
+  width: 100%;
+  height: 300px;
+}
+
+.about-container
+{
+  margin:center;
+  text-align: center;
+}
+
+
+.mission-container
+{
+		float: left;
+		font-family: Sans-serif;
+		background-color: #ff9980;
+		margin-left: 50px;
+
+}
+
+
+.vision-container
+{
+		float: left;
+		font-family: Sans-serif;
+		background-color: #ffff80;	
+}
+
+
+.history-container
+{
+		clear: both;
+  		text-align: justify;
+  		background-color: #b3ff66;
+		font-family: Sans-serif;
+}
+
+
+
+h2{
+		text-align: center;
+		font-weight: bold;
+	}
