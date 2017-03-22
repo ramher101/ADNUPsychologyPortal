@@ -1,14 +1,18 @@
 
+<div class ="wrap">
 
-<% @officers.each do |x| %>
-	<div>
-		<div>
-			<a href="/officer/<%= x.id %>" > APSA Officers </a> <br>
-		</div>
 
-		<div>
-			<a href="/professor/index" > Faculty Members </a> <br>
-		</div>
-	</div>
-<% end %>
 
+	<% @officers.each do |x| %>
+		
+			<div class="officer-left">
+				<a class = "text-people" href="/officer/<%= x.id %>" > APSA Officers </a> <br>
+			</div>
+
+			<div class="professor-right">
+				<a class = "text-people" href="/professor/index" > Faculty Members </a> <br>
+			</div>
+		
+	<% end %>
+
+ </div>
