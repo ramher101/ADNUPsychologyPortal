@@ -4,49 +4,60 @@
     <title>Website</title>
     <%= csrf_meta_tags %>
 
-    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 
   </head>
 
 
-  <body >
+  <body>
     <div class = "banner">
-      Ateneo de Naga University
+     <%= image_tag("adnu_logo.png", size: "30x30", alt: "adnu logo") %>
+     Ateneo De Naga University
+      <div class = "toright">
+            
+            <% if !user_signed_in? %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "navbar-signout"  %>
+            <% end %>
+
+            <% if user_signed_in? %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-signout"  %>
+                <% else %>
+                <%= link_to "Log in" , new_user_session_path, class: "navbar-signout" %> 
+            <% end %>
+          </div>
     </div>
 
     <div class = "header" >
-      DEPARTMENT OF PSYCHOLOGY
-      <div class = "search-container">
-        <%= form_tag "/search_items/" do %>
-        <%= text_field_tag :search_string %>
-        <%= submit_tag :search %>
-        <% end %>
-      </div>
+     <%= image_tag("psych_logo", size: "100x100", alt: "adnu logo") %>
+        DEPARTMENT OF PSYCHOLOGY 
 
+          <div class = "search-field" >
+            <%= form_tag "/search_items/" do %>
+              <input type="search_string" class="form-control" placeholder="Search for..." >
+            <% end %>
+
+                
+          </div>
+
+      
     </div>
 
     <nav class = "navbar navbar-default">
       <div class = "container" >
         <div class = "navbar-header" >
-          <%= link_to "Home" , research_index_path, class: "navbar-brand" %>
+          <%= link_to "Home" , event_index_path, class: "navbar-brand" %>
           <%= link_to "Subjects" , subject_index_path, class: "navbar-brand" %>
           <%= link_to "Research" , research_index_path, class: "navbar-brand" %>
-          <%= link_to "Events" , event_index_path, class: "navbar-brand" %>
+          <%= link_to "Events" , event_eventlist_path, class: "navbar-brand" %>
           <%= link_to "People" , officer_index_path, class: "navbar-brand" %>
           <%= link_to "About Us" , about_index_path, class: "navbar-brand" %>
-        </div>
 
-        <ul class = "nav navbar-nav navbar-right">
-          <li> <%= link_to "Sign Up", new_user_registration_path%> </li>
-            <% if user_signed_in? %>
-              <li>  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
-              <% else %>
-              <li> <%= link_to "Log in" , new_user_session_path %> </li>
-            <% end %>
-        </ul>
+       </div>
+        
 
-      </div>
+    </div>
 
     </nav>
 
@@ -54,11 +65,16 @@
 
     <p class="alert"><%= alert %></p>
 
-    <div class = "container1">
-      <%= yield %>
-    </div>
-  </body>
 
-  <div class = "footer">
-  </div>
+
+ <div class = "container" >
+ <%= yield %>
+ </div>
+
+ <div class = "footer" >
+          Footer
+ </div>
+
+ </body>
+  
 </html>
